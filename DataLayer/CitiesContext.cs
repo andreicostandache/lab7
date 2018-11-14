@@ -9,6 +9,5 @@ namespace DataLayer
             Database.EnsureCreated();
         }
         public DbSet<City> Cities { get; set; }
-        public DbSet<Poi> Pois { get; set; }
     }
 }
