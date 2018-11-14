@@ -13,6 +13,59 @@ namespace Laborator7.Controllers
     [ApiController]
     public class CitiesController : ControllerBase
     {
-        private readonly ICityRepository _cityRepository;
+        private readonly ICityRepository _repository;
+
+        public CitiesController(ICityRepository repository)
+        {
+            _repository = repository;
+        }
+
+
+        [HttpGet]
+        public ActionResult<IReadOnlyList<City>> Get()
+
+        {
+
+            return Ok(_repository.GetAll());
+
+        }
+
+    
+
+        [HttpGet("{id}", Name = "GetById")]
+
+        public ActionResult<City> Get(Guid id)
+
+        {
+
+            return Ok(this._repository.GetById(id));
+
+        }
+
+        [HttpPost]
+
+        public ActionResult<City> Post([FromBody] CreateTodoModel createTodoModel)
+
+        {
+
+            if (createTodoModel == null)
+
+            {
+
+                return BadRequest();
+
+            }
+
+
+
+            City todo = new City(createTodoModel.Description, createTodoModel.IsCompleted);
+
+            this._repository.Create(todo);
+
+
+
+            return CreatedAtRoute("GetById", new { id = todo.Id }, todo);
+
+        }
     }
 }
