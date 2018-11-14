@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Laborator7.Models
 {
-    public class CreateCityModel
+    public class CreatePoiModel
     {
         public Guid Id { get; set; }
 
