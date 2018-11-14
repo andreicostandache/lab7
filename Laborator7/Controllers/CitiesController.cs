@@ -13,7 +13,7 @@ namespace Laborator7.Controllers
     [ApiController]
     public class CitiesController : ControllerBase
     {
-        private readonly ICityRepository _repository;
+        private readonly ICityRepository _repository; 
 
         public CitiesController(ICityRepository repository)
         {
