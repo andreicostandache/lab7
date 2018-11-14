@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using BusinessLayer;
+using DataLayer;
 
 namespace Laborator7.Controllers
 {
@@ -11,5 +13,6 @@ namespace Laborator7.Controllers
     [ApiController]
     public class CitiesController : ControllerBase
     {
+        private readonly ICityRepository _cityRepository;
     }
 }
