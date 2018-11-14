@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace BusinessLayer
 {
-    public class Repository : IRepository
+    public class CityRepository : IRepository
     {
         private readonly CitiesContext _context;
 
-        public Repository(CitiesContext context)
+        public CityRepository(CitiesContext context)
         {
             _context = context;
         }
