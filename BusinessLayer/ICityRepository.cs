@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace BusinessLayer
 {
-    public interface IRepository
+    public interface ICityRepository
     {
         void Create(City City);
         void Delete(City CityId);
