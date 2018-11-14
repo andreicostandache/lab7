@@ -7,5 +7,10 @@ namespace DataLayer
         public Guid Id { get; set; }
 
         public string Description { get; set; }
+
+        public City(string description)
+        {
+            this.Description = description;
+        }
     }
 }

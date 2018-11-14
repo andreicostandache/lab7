@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using BusinessLayer;
 using DataLayer;
+using Laborator7.Models;
 
 namespace Laborator7.Controllers
 {
@@ -44,7 +45,7 @@ namespace Laborator7.Controllers
 
         [HttpPost]
 
-        public ActionResult<City> Post([FromBody] CreateTodoModel createTodoModel)
+        public ActionResult<City> Post([FromBody] CreateCityModel createTodoModel)
 
         {
 
@@ -58,13 +59,13 @@ namespace Laborator7.Controllers
 
 
 
-            City todo = new City(createTodoModel.Description, createTodoModel.IsCompleted);
+            City city = new City(createTodoModel.Description);
 
-            this._repository.Create(todo);
+            this._repository.Create(city);
 
 
 
-            return CreatedAtRoute("GetById", new { id = todo.Id }, todo);
+            return CreatedAtRoute("GetById", new { id = city.Id }, city);
 
         }
     }
