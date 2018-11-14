@@ -34,13 +34,13 @@ namespace Laborator7.Controllers
 
     
 
-        [HttpGet("{id}", Name = "GetById")]
-        [Route("/pois/{id}")]
-        public ActionResult<City> Get(Guid id)
+        [HttpGet("{poiId}", Name = "GetById")]
+        [Route("/pois/{poiId}")]
+        public ActionResult<City> Get(Guid poiId)
 
         {
 
-            return Ok(this._repository.GetById(id));
+            return Ok(this._repository.GetById(poiId));
 
         }
 
